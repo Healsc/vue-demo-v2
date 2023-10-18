@@ -754,6 +754,20 @@ async-validator@^4.2.5:
   resolved "http://r.npm.sankuai.com/async-validator/download/async-validator-4.2.5.tgz#c96ea3332a521699d0afaaceed510a54656c6339"
   integrity sha1-yW6jMypSFpnQr6rO7VEKVGVsYzk=
 
+asynckit@^0.4.0:
+  version "0.4.0"
+  resolved "http://r.npm.sankuai.com/asynckit/download/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
+  integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
+
+axios@^1.5.1:
+  version "1.5.1"
+  resolved "http://r.npm.sankuai.com/axios/download/axios-1.5.1.tgz#11fbaa11fc35f431193a9564109c88c1f27b585f"
+  integrity sha1-EfuqEfw19DEZOpVkEJyIwfJ7WF8=
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "http://r.npm.sankuai.com/balanced-match/download/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
@@ -838,6 +852,13 @@ color-name@~1.1.4:
   resolved "http://r.npm.sankuai.com/color-name/download/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
 
+combined-stream@^1.0.8:
+  version "1.0.8"
+  resolved "http://r.npm.sankuai.com/combined-stream/download/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
+  integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
+  dependencies:
+    delayed-stream "~1.0.0"
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "http://r.npm.sankuai.com/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -883,6 +904,11 @@ deep-is@^0.1.3:
   version "0.1.4"
   resolved "http://r.npm.sankuai.com/deep-is/download/deep-is-0.1.4.tgz#a6f2dce612fadd2ef1f519b73551f17e85199831"
   integrity sha1-pvLc5hL63S7x9Rm3NVHxfoUZmDE=
+
+delayed-stream@~1.0.0:
+  version "1.0.0"
+  resolved "http://r.npm.sankuai.com/delayed-stream/download/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
+  integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
 doctrine@^3.0.0:
   version "3.0.0"
@@ -1140,6 +1166,20 @@ flatted@^3.2.9:
   resolved "http://r.npm.sankuai.com/flatted/download/flatted-3.2.9.tgz#7eb4c67ca1ba34232ca9d2d93e9886e611ad7daf"
   integrity sha1-frTGfKG6NCMsqdLZPpiG5hGtfa8=
 
+follow-redirects@^1.15.0:
+  version "1.15.3"
+  resolved "http://r.npm.sankuai.com/follow-redirects/download/follow-redirects-1.15.3.tgz#fe2f3ef2690afce7e82ed0b44db08165b207123a"
+  integrity sha1-/i8+8mkK/OfoLtC0TbCBZbIHEjo=
+
+form-data@^4.0.0:
+  version "4.0.0"
+  resolved "http://r.npm.sankuai.com/form-data/download/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
+  integrity sha1-k5Gdrq82HuUpWEubMWZNwSyfpFI=
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "http://r.npm.sankuai.com/fs.realpath/download/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -1259,6 +1299,11 @@ isexe@^2.0.0:
   resolved "http://r.npm.sankuai.com/isexe/download/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
 
+js-cookie@^3.0.5:
+  version "3.0.5"
+  resolved "http://r.npm.sankuai.com/js-cookie/download/js-cookie-3.0.5.tgz#0b7e2fd0c01552c58ba86e0841f94dc2557dcdbc"
+  integrity sha1-C34v0MAVUsWLqG4IQflNwlV9zbw=
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "http://r.npm.sankuai.com/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -1363,6 +1408,18 @@ memoize-one@^6.0.0:
   version "6.0.0"
   resolved "http://r.npm.sankuai.com/memoize-one/download/memoize-one-6.0.0.tgz#b2591b871ed82948aee4727dc6abceeeac8c1045"
   integrity sha1-slkbhx7YKUiu5HJ9xqvO7qyMEEU=
+
+mime-db@1.52.0:
+  version "1.52.0"
+  resolved "http://r.npm.sankuai.com/mime-db/download/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
+  integrity sha1-u6vNwChZ9JhzAchW4zh85exDv3A=
+
+mime-types@^2.1.12:
+  version "2.1.35"
+  resolved "http://r.npm.sankuai.com/mime-types/download/mime-types-2.1.35.tgz#381a871b62a734450660ae3deee44813f70d959a"
+  integrity sha1-OBqHG2KnNEUGYK497uRIE/cNlZo=
+  dependencies:
+    mime-db "1.52.0"
 
 minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
@@ -1504,6 +1561,11 @@ prettier@^2.7.1:
   version "2.8.8"
   resolved "http://r.npm.sankuai.com/prettier/download/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
   integrity sha1-6MXX6YpDBf/j3i4fxKyhpxwosdo=
+
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "http://r.npm.sankuai.com/proxy-from-env/download/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+  integrity sha1-4QLxbKNVQkhldV0sno6k8k1Yw+I=
 
 punycode@^2.1.0:
   version "2.3.0"
