@@ -2,7 +2,12 @@ import HttpRequest from "@/utils/request";
 
 // 登录
 export function login(params = {}) {
-  return HttpRequest("/login", "POST", params);
+  return HttpRequest("/user/login", "POST", params);
+}
+
+// 登录
+export function resign(params = {}) {
+  return HttpRequest("/user/resign", "POST", params);
 }
 
 // 登出
