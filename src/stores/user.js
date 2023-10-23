@@ -8,9 +8,12 @@ export const useUserStore = defineStore({
     return {
       userInfo: {},
       token: getToken(),
+      count: 1,
     };
   },
-  getters: {},
+  getters: {
+    doubleCount: (state) => state.count + 1,
+  },
   actions: {
     // 登录
     async Login(params) {
@@ -30,9 +33,11 @@ export const useUserStore = defineStore({
 
     // 获取用户信息
     async GetInfo() {
+      this.count = 12;
+
       try {
         const res = await getInfo();
-        this.userInfo = res.data;
+        this.userInfo = res;
         return res;
       } catch (error) {
         if (error.response.status === 401) {
