@@ -18,6 +18,11 @@ const getUserInfo = async () => {
   const res = await userStore.GetInfo();
   console.log({ res });
 };
+
+const logout = async () => {
+  const res = await userStore.Logout();
+  console.log({ res });
+};
 </script>
 
 <template>
@@ -26,7 +31,7 @@ const getUserInfo = async () => {
     <el-button @click="loginHandle" type="primary">login</el-button>
     <el-button @click="resignHandle" type="success">resign</el-button>
     <el-button @click="getUserInfo" type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
+    <el-button @click="logout" type="warning">logout</el-button>
     <el-button type="danger">Danger</el-button>
   </el-row>
 </template>
