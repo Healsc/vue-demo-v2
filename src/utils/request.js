@@ -23,11 +23,14 @@ axios.interceptors.request.use(
 // 添加响应拦截器
 axios.interceptors.response.use(
   function (response) {
+    const { data, status } = response;
     // 对响应数据做点什么，允许在数据返回客户端前，修改响应的数据
-    return response.data;
+    return { data, status, success: true };
   },
   function (error) {
-    return Promise.reject(error);
+    const { response } = error;
+    const { data, status } = response;
+    return Promise.reject({ data, status, success: false });
   }
 );
 
@@ -96,7 +99,7 @@ function HttpRequest(url, method, params, isLoading = true) {
       })
       .catch((response) => {
         errorState(response);
-        resolve(response.response);
+        resolve(response);
       })
       .then(function () {
         httpTime--;
