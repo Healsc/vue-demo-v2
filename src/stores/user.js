@@ -15,8 +15,10 @@ export const useUserStore = defineStore({
     // 登录
     async Login(params) {
       const res = await login(params);
-      setToken(res.token);
-      this.token = res.token;
+      const { data } = res;
+      const { token = "" } = data;
+      setToken(token);
+      this.token = token;
       return res;
     },
 
@@ -31,7 +33,7 @@ export const useUserStore = defineStore({
     async GetInfo() {
       try {
         const res = await getInfo();
-        this.userInfo = res.data.user;
+        this.userInfo = res.data;
         return res;
       } catch (error) {
         if (error.response.status === 401) {

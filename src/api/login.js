@@ -2,12 +2,12 @@ import HttpRequest from "@/utils/request";
 
 // 登录
 export function login(params = {}) {
-  return HttpRequest("/user/login", "POST", params);
+  return HttpRequest("/login", "POST", params);
 }
 
-// 登录
+// 注册
 export function resign(params = {}) {
-  return HttpRequest("/user/resign", "POST", params);
+  return HttpRequest("/resign", "POST", params);
 }
 
 // 登出
@@ -17,7 +17,7 @@ export function logout(params = {}) {
 
 // 获取用户信息
 export function getInfo(params = {}) {
-  return HttpRequest("/getUserInfo", "GET", params);
+  return HttpRequest("/user", "GET", params);
 }
 
 // 验证码

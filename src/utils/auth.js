@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const TokenKey = "VUE-PROJECT-Token";
+const TokenKey = "VUE-DEMO-TOKEN";
 
 export function getToken() {
   return Cookies.get(TokenKey) || "";

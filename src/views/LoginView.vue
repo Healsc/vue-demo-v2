@@ -1,5 +1,5 @@
 <script setup>
-import { login, resign } from "../api/login";
+import { login, resign, getInfo } from "../api/login";
 import { useUserStore } from "../stores/user";
 const userStore = useUserStore();
 
@@ -13,6 +13,11 @@ const resignHandle = async () => {
   const res = await resign({ username: "lisi", password: "lisi123" }, true);
   console.log("res", res);
 };
+
+const getUserInfo = async () => {
+  const res = await userStore.GetInfo();
+  console.log({ res });
+};
 </script>
 
 <template>
@@ -20,7 +25,7 @@ const resignHandle = async () => {
     <el-button>Default</el-button>
     <el-button @click="loginHandle" type="primary">login</el-button>
     <el-button @click="resignHandle" type="success">resign</el-button>
-    <el-button type="info">Info</el-button>
+    <el-button @click="getUserInfo" type="info">Info</el-button>
     <el-button type="warning">Warning</el-button>
     <el-button type="danger">Danger</el-button>
   </el-row>
