@@ -96,7 +96,7 @@ function HttpRequest(url, method, params, isLoading = true) {
       })
       .catch((response) => {
         errorState(response);
-        resolve(response.response.data);
+        resolve(response.response);
       })
       .then(function () {
         httpTime--;
