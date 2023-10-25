@@ -44,13 +44,13 @@ function errorState(error) {
       }
       break;
     case 401:
-      ElMessageBox.alert("sys.api.errTokenExpire", "sys.api.errMsg500", {
-        confirmButtonText: "OK",
-        callback: () => {
-          removeToken();
-          // window.location.reload();
-        },
-      });
+      // ElMessageBox.alert("401", "未登录", {
+      //   confirmButtonText: "确认",
+      //   callback: () => {
+      //     removeToken();
+      //     // window.location.reload();
+      //   },
+      // });
       break;
     case 403:
       message = "sys.api.errMsg403";
@@ -97,7 +97,8 @@ function HttpRequest(url, method, params, isLoading = true) {
       })
       .catch((response) => {
         errorState(response);
-        reject(response);
+        // reject(response);
+        resolve(response.response?.data);
       })
       .then(function () {
         httpTime--;
