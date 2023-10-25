@@ -2,10 +2,13 @@
 import { storeToRefs } from "pinia";
 import { login, resign, getInfo } from "../api/login";
 import { useUserStore } from "../stores/user";
+import { useUserStore1 } from "../stores/user-setup";
 import { useCounterStore } from "../stores/counter";
+
 import { onMounted } from "vue";
 
 const userStore = useUserStore();
+const userStore1 = useUserStore1();
 const useCountStore = useCounterStore();
 
 const loginHandle = async () => {
@@ -23,17 +26,22 @@ const resignHandle = async () => {
 
 const getUserInfo = async () => {
   const res = await userStore.GetInfo();
+  await userStore1.GetInfo();
   console.log({ res });
 };
 
 const test = () => {
-  const { userInfo } = storeToRefs(userStore);
+  // const { userInfo } = storeToRefs(userStore);
   // console.log(userStore.doubleCount);
   // console.log(useUserStore.userInfo);
   // console.log({ doubleCount });
   // console.log(doubleCount.value);
-  console.log(userInfo.value.username);
-  console.log(userInfo.value.userId);
+  // console.log(userInfo.value.username);
+  // console.log(userInfo.value.userId);
+  const { count, doubleCount, userInfo } = userStore1;
+  console.log({ count, doubleCount, userInfo });
+  console.log(userInfo.value);
+  console.log(userInfo.userId);
 };
 
 const logout = async () => {
