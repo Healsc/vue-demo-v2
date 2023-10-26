@@ -25,9 +25,13 @@ const resignHandle = async () => {
 // const { userInfo, doubleCount } = storeToRefs(userStore);
 
 const getUserInfo = async () => {
-  const res = await userStore.GetInfo();
-  await userStore1.GetInfo();
-  console.log({ res });
+  try {
+    const res = await userStore.GetInfo();
+    // await userStore1.GetInfo();
+    console.log({ res });
+  } catch (err) {
+    console.log({ err });
+  }
 };
 
 const test = () => {
