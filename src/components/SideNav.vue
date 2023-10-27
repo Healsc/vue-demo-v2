@@ -4,11 +4,9 @@
       <el-switch v-model="isCollapse" />
     </div>
     <el-menu
-      default-active="0-0"
+      :default-active="active"
       class="el-menu-vertical-demo"
       :collapse="!isCollapse"
-      @open="handleOpen"
-      @close="handleClose"
       background-color="#f2f2f2"
       router
     >
@@ -38,19 +36,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 import { sideNavList } from "./side-nav";
 
 const isCollapse = ref(true);
+const active = ref("/");
 
-const handleOpen = (key, keyPath) => {
-  console.log(key, keyPath);
-};
-
-const handleClose = (key, keyPath) => {
-  console.log(key, keyPath);
-};
+onMounted(() => {
+  const { pathname } = window.location;
+  active.value = pathname;
+});
 </script>
 
 <style>
