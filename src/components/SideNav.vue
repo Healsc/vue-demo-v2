@@ -9,6 +9,7 @@
       :collapse="!isCollapse"
       @open="handleOpen"
       @close="handleClose"
+      background-color="#000000"
     >
       <el-sub-menu index="1">
         <template #title>
@@ -67,5 +68,15 @@ const handleClose = (key, keyPath) => {
 <style>
 .collapse-switch {
   text-align: center;
+}
+
+.el-aside {
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+.el-menu-vertical-demo {
+  height: calc(100% - 32px);
+  overflow-y: auto;
 }
 </style>

@@ -10,7 +10,7 @@ import SideNav from "./components/SideNav.vue";
       <el-header>Header</el-header>
       <el-container>
         <SideNav />
-        <el-container>
+        <el-container class="main-wrap">
           <el-main>
             <RouterView />
             Main</el-main
@@ -23,7 +23,7 @@ import SideNav from "./components/SideNav.vue";
 </template>
 
 <style scoped>
-.el-aside {
-  /* height: 100%; */
+.main-wrap {
+  height: calc(100vh - 60px);
 }
 </style>
