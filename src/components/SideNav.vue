@@ -14,6 +14,7 @@
         <template v-if="navItem.children && navItem.children.length">
           <el-sub-menu :index="navItem.path">
             <template #title>
+              <el-icon><icon-menu /></el-icon>
               <span>{{ navItem.label }}</span>
             </template>
             <template v-if="navItem.children">
@@ -28,7 +29,8 @@
           </el-sub-menu>
         </template>
         <el-menu-item :index="navItem.path" v-else>
-          <span>{{ navItem.label }}</span>
+          <el-icon><icon-menu /></el-icon>
+          <template #title>{{ navItem.label }}</template>
         </el-menu-item>
       </template>
     </el-menu>
@@ -37,6 +39,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { Menu as IconMenu } from "@element-plus/icons-vue";
 
 import { sideNavList } from "./side-nav";
 
