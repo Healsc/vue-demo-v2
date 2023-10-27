@@ -4,55 +4,43 @@
       <el-switch v-model="isCollapse" />
     </div>
     <el-menu
-      default-active="2"
+      default-active="0-0"
       class="el-menu-vertical-demo"
       :collapse="!isCollapse"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#000000"
+      background-color="#f2f2f2"
+      router
     >
-      <el-sub-menu index="1">
-        <template #title>
-          <el-icon><location /></el-icon>
-          <span>Navigator One</span>
+      <template v-for="navItem in sideNavList" :key="navItem.key">
+        <template v-if="navItem.children && navItem.children.length">
+          <el-sub-menu :index="navItem.path">
+            <template #title>
+              <span>{{ navItem.label }}</span>
+            </template>
+            <template v-if="navItem.children">
+              <el-menu-item
+                v-for="cItem in navItem.children"
+                :key="cItem.key"
+                :index="cItem.path"
+              >
+                {{ cItem.label }}
+              </el-menu-item>
+            </template>
+          </el-sub-menu>
         </template>
-        <el-menu-item-group>
-          <template #title><span>Group One</span></template>
-          <el-menu-item index="1-1">item one</el-menu-item>
-          <el-menu-item index="1-2">item two</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Two">
-          <el-menu-item index="1-3">item three</el-menu-item>
-        </el-menu-item-group>
-        <el-sub-menu index="1-4">
-          <template #title><span>item four</span></template>
-          <el-menu-item index="1-4-1">item one</el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="2">
-        <el-icon><icon-menu /></el-icon>
-        <template #title>Navigator Two</template>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <el-icon><document /></el-icon>
-        <template #title>Navigator Three</template>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <el-icon><setting /></el-icon>
-        <template #title>Navigator Four</template>
-      </el-menu-item>
+        <el-menu-item :index="navItem.path" v-else>
+          <span>{{ navItem.label }}</span>
+        </el-menu-item>
+      </template>
     </el-menu>
   </el-aside>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-} from "@element-plus/icons-vue";
+
+import { sideNavList } from "./side-nav";
 
 const isCollapse = ref(true);
 
