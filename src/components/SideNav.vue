@@ -1,7 +1,8 @@
 <template>
   <el-aside width="auto">
     <div class="collapse-switch">
-      <el-switch v-model="isCollapse" />
+      <el-icon @click="handleColleapse" v-if="isCollapse"><Fold /></el-icon>
+      <el-icon @click="handleColleapse" v-else><Expand /></el-icon>
     </div>
     <el-menu
       :default-active="active"
@@ -39,12 +40,16 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { Menu as IconMenu } from "@element-plus/icons-vue";
+import { Menu as IconMenu, Fold, Expand } from "@element-plus/icons-vue";
 
 import { sideNavList } from "./side-nav";
 
 const isCollapse = ref(true);
 const active = ref("/");
+
+const handleColleapse = () => {
+  isCollapse.value = !isCollapse.value;
+};
 
 onMounted(() => {
   const { pathname } = window.location;
