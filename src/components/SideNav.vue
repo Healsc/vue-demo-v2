@@ -15,7 +15,7 @@
         <template v-if="navItem.children && navItem.children.length">
           <el-sub-menu :index="navItem.path">
             <template #title>
-              <el-icon><icon-menu /></el-icon>
+              <el-icon><kvIcon :name="navItem.icon" /></el-icon>
               <span>{{ navItem.label }}</span>
             </template>
             <template v-if="navItem.children">
@@ -30,7 +30,7 @@
           </el-sub-menu>
         </template>
         <el-menu-item :index="navItem.path" v-else>
-          <el-icon><icon-menu /></el-icon>
+          <el-icon><kvIcon :name="navItem.icon || 'Grid'" /></el-icon>
           <template #title>{{ navItem.label }}</template>
         </el-menu-item>
       </template>
@@ -40,9 +40,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { Menu as IconMenu, Fold, Expand } from "@element-plus/icons-vue";
+import { Fold, Expand } from "@element-plus/icons-vue";
 
-import { sideNavList } from "./side-nav";
+import { sideNavList } from "./side-nav-config";
 
 const isCollapse = ref(true);
 const active = ref("/");
