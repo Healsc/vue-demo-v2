@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import testRoute from "./test";
+import { getToken } from "@/utils/auth";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,20 @@ const router = createRouter({
       component: () => import("../views/NotFound.vue"),
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  if (getToken()) {
+    if (to.path === "/login") {
+      next("/");
+    } else {
+      next();
+    }
+  } else if (to.name === "login") {
+    next();
+  } else {
+    next("/login");
+  }
 });
 
 export default router;
