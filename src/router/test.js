@@ -9,4 +9,10 @@ export default [
     name: "p2",
     component: () => import("../views/LoginView.vue"),
   },
+  {
+    path: "/login",
+    name: "login",
+    meta: { hideSideNav: true },
+    component: () => import("../views/Login.vue"),
+  },
 ];
