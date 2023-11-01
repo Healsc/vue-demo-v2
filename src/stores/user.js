@@ -33,17 +33,18 @@ export const useUserStore = defineStore({
 
     // 获取用户信息
     async GetInfo() {
-      this.count = 12;
-
       try {
         const res = await getInfo();
-        this.userInfo = res;
+        if (res.statusCode === 401) {
+          removeToken();
+          this.userInfo = {};
+        } else {
+          this.userInfo = res;
+        }
         return res;
       } catch (error) {
         this.userInfo = {};
-        if (error.response.status === 401) {
-          removeToken();
-        }
+        removeToken();
       }
     },
   },

@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { RouterView, useRoute } from "vue-router";
 
 import SideNav from "./components/side-nav/SideNav.vue";
+import HeaderView from "./components/header/HeaderView.vue";
 
 const showSideNav = computed(() => {
   const route = useRoute();
@@ -13,7 +14,7 @@ const showSideNav = computed(() => {
 <template>
   <div class="common-layout" v-if="showSideNav">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header><HeaderView /></el-header>
       <el-container>
         <SideNav />
         <el-container class="main-wrap">
