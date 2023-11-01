@@ -13,7 +13,7 @@ const showSideNav = computed(() => {
 <template>
   <div class="common-layout" v-if="showSideNav">
     <el-container>
-      <el-header>Header{{ show }}</el-header>
+      <el-header>Header</el-header>
       <el-container>
         <SideNav />
         <el-container class="main-wrap">
