@@ -2,11 +2,11 @@
 import { computed } from "vue";
 import { RouterView, useRoute } from "vue-router";
 
-import SideNav from "./components/SideNav.vue";
+import SideNav from "./components/side-nav/SideNav.vue";
 
 const showSideNav = computed(() => {
   const route = useRoute();
-  return Boolean(!route.meta.hideSideNav);
+  return Boolean(route.meta.showSideNav);
 });
 </script>
 
