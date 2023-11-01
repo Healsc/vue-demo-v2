@@ -1,7 +1,7 @@
 export default [
   {
     path: "/p1",
-    name: "about",
+    name: "p1",
     component: () => import("../views/AboutView.vue"),
   },
   {
