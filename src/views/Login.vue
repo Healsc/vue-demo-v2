@@ -14,7 +14,7 @@
       <el-input class="input-width" v-model="ruleForm.password" />
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="submitForm(ruleFormRef)">
+      <el-button type="primary" @click="handleLogin(ruleFormRef)">
         Login
       </el-button>
     </el-form-item>
@@ -55,20 +55,20 @@ const rules = reactive<FormRules<RuleForm>>({
   ],
 })
 
-const submitForm = async (formEl: FormInstance | undefined) => {
+const handleLogin = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
     if (valid) {
       userStore.Login(ruleForm).then(res => {
         const { success, error } = res;
         if (!success) {
-          ElMessage.error(error || '失败')
+          ElMessage.error(error || '登录失败')
         } else {
-          ElMessage.success('成功')
+          ElMessage.success({ message: '登录成功', duration: 1000 })
           router.replace('/')
         }
       }).catch(err => {
-        ElMessage.error('失败！')
+        ElMessage.error('登录失败！')
       })
     } else {
       ElMessage.error('请输入')
