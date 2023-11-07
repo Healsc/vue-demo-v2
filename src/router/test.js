@@ -11,10 +11,4 @@ export default [
     meta: { showSideNav: true },
     component: () => import("../views/LoginView.vue"),
   },
-  {
-    path: "/login",
-    name: "login",
-    meta: { hideSideNav: true },
-    component: () => import("../views/Login.vue"),
-  },
 ];

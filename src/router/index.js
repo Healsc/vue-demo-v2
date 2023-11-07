@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import testRoute from "./test";
+import loginRoute from './login';
 import { getToken } from "@/utils/auth";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     ...testRoute,
+    ...loginRoute,
     {
       path: "/",
       name: "home",
